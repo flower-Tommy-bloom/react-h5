@@ -1,5 +1,5 @@
 /**
- * @author：姚嘉东
+ * @author：me
  * @description：获取 URL 参数
  * @date：2020/3/18
  */

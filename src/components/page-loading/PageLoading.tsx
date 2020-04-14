@@ -1,6 +1,6 @@
 /**
  * 页面正在加载中效果
- * @author 姚嘉东
+ * @author me
  */
 
 import React from 'react';

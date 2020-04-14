@@ -1,5 +1,5 @@
 /**
- * @author: 姚嘉东
+ * @author: me
  * @description: 变量类型检测工具方法
  */
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * @author：姚嘉东
+ * @author：me
  * @description：路由懒加载工具函数
  * @date：2020/3/17
  */

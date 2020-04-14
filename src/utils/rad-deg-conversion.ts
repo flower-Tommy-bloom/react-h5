@@ -1,5 +1,5 @@
 /**
- * @author：姚嘉东
+ * @author：me
  * @description：弧度—角度转换工具函数
  * @date：2020/3/18
  */

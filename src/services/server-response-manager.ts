@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { message } from 'antd';
 /**
- * @author：姚嘉东
+ * @author：me
  * @description：针对请求返回做不同的响应处理
  * @date：2020/3/19
  */

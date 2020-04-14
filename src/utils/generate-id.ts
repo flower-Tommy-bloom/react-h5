@@ -1,5 +1,5 @@
 /**
- * @author：姚嘉东
+ * @author：me
  * @description：生成随机 ID
  * @date：2020/3/18
  */
@@ -10,9 +10,9 @@
  * @param radix
  */
 export function generateRandomUUID(len: number, radix: number) {
-    let chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
-    let uuid = [],
-        i;
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+    const uuid = [];
+    let i;
     radix = radix || chars.length;
     if (len) {
         for (i = 0; i < len; i++) uuid[i] = chars[0 | (Math.random() * radix)];

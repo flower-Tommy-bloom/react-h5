@@ -1,5 +1,5 @@
 /**
- * @author：姚嘉东
+ * @author：me
  * @description：路由转换器
  * @date：2020/3/17
  */
@@ -15,17 +15,6 @@ import { RouteConfigDeclaration } from '@routes/routes-config';
 // 如果说引入的是一个 esModule 的话，
 // 它会有一个 __esModule=true 的键值对——表示 ES6 模块；
 // 有一个 default: "模块内容" 的键值对——表示 该模块的内容
-
-/**
- * 渲染所有的路由（普通路由+重定向路由）
- * @param routesConfig
- * @param extraProps
- */
-export function renderAllRoutes(routesConfig: RouteConfigDeclaration[], extraProps: any = {}) {
-    let routes = renderRoutes(routesConfig, extraProps);
-    let redirect = renderRedirectRoute(routesConfig);
-    return [...routes, redirect];
-}
 
 /**
  * 渲染普通路由
@@ -86,6 +75,17 @@ export function renderRoutes(routesConfig: RouteConfigDeclaration[], extraProps:
  * @param routes
  */
 export function renderRedirectRoute(routes: RouteConfigDeclaration[]) {
-    let { path } = routes.find(route => route.isRedirect) || routes[0];
+    const { path } = routes.find(route => route.isRedirect) || routes[0];
     return <Redirect key={path + '-redirect'} to={path} />;
+}
+
+/**
+ * 渲染所有的路由（普通路由+重定向路由）
+ * @param routesConfig
+ * @param extraProps
+ */
+export function renderAllRoutes(routesConfig: RouteConfigDeclaration[], extraProps: any = {}) {
+    const routes = renderRoutes(routesConfig, extraProps);
+    const redirect = renderRedirectRoute(routesConfig);
+    return [...routes, redirect];
 }

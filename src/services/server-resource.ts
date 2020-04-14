@@ -1,5 +1,5 @@
 /**
- * @author：姚嘉东
+ * @author：me
  * @description：服务器资源路径拼接（因为后端返回的路径不一定是统一的，所以需要在前端做兼容处理）
  * @date：2020/3/19
  */
@@ -27,6 +27,7 @@ class ServerResource {
         } else if (url.startsWith(this.baseUrl)) {
             return url;
         } else {
+            console.log('xxx');
             return urljoin(this.baseUrl, url);
         }
     }
