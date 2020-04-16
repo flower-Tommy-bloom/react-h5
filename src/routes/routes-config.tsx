@@ -58,6 +58,54 @@ export const routesConfig: RouteConfigDeclaration[] = [
         component: App,
         routes: [
             {
+                path: '/layout',
+                isDynamic: true,
+                component: React.lazy(() =>
+                    import(/* webpackChunkName: "layout"*/ '@src/views/layout'),
+                ),
+                routes: [
+                    {
+                        path: '/layout/user',
+                        name: '用户管理',
+                        isRedirect: true,
+                        isDynamic: true,
+                        component: React.lazy(() =>
+                            import(/* webpackChunkName: "user" */ '@src/views/user'),
+                        ),
+                    },
+                    {
+                        path: '/layout/vip',
+                        name: '会员',
+                        isDynamic: true,
+                        component: React.lazy(() =>
+                            import(/* webpackChunkName: "vip" */ '@src/views/vip'),
+                        ),
+                        routes: [
+                            {
+                                path: '/layout/vip/normal',
+                                name: '普通会员',
+                                isDynamic: true,
+                                component: React.lazy(() =>
+                                    import(
+                                        /* webpackChunkName: "vip--normal" */ '@src/views/vip/normal'
+                                    ),
+                                ),
+                            },
+                            {
+                                path: '/layout/vip/classy',
+                                name: '高级会员',
+                                isDynamic: true,
+                                component: React.lazy(() =>
+                                    import(
+                                        /* webpackChunkName: "vip--classy" */ '@src/views/vip/classy'
+                                    ),
+                                ),
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
                 path: '/home',
                 // exact: true,
                 isDynamic: true,
@@ -99,7 +147,6 @@ export const routesConfig: RouteConfigDeclaration[] = [
             {
                 path: '/login',
                 isDynamic: true,
-                isRedirect: true,
                 component: React.lazy(() =>
                     import(
                         /* webpackChunkName: "login" */

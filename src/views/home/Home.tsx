@@ -33,7 +33,9 @@ export default class Home extends React.Component<HomeProps> {
         super(props);
         localStorage.setItem('token', 'login');
     }
-
+    componentDidMount() {
+        console.log('componentDidMount', this.props);
+    }
     handleLinkToRegisterBtnClick = () => {
         this.props.history.push('/register');
     };
